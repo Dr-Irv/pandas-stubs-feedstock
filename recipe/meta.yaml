@@ -37,7 +37,7 @@ about:
   license_file: LICENSE
   summary: Collection of Pandas stub files
   description: |
-     Collection of Pandas stub files supported by the pandas team
+    Collection of Pandas stub files supported by the pandas team
   doc_url: https://github.com/pandas-dev/pandas-stubs
   dev_url: https://github.com/pandas-dev/pandas-stubs
 
