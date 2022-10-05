@@ -11,16 +11,16 @@ source:
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [py<38]
 
 requirements:
   host:
-    - python >=3.8
+    - python
     - pip
     - poetry
   run:
-    - python >=3.8
+    - python
     - types-pytz >=2022.1.1
 
 test:
