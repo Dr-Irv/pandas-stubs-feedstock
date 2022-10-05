@@ -19,6 +19,8 @@ requirements:
     - python
     - pip
     - poetry
+    - setuptools
+    - wheels
   run:
     - python
     - types-pytz >=2022.1.1
