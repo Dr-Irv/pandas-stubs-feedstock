@@ -1,5 +1,5 @@
 {% set name = "pandas-stubs" %}
-{% set version = "1.4.4.220912" %}
+{% set version = "1.5.0.221003" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5920ffd5a09e49bfc987c4400056ffe6d9e9448c821e64c2c47a18345f8b00d7
+  sha256: 853ccd7c530db01eeee8293746fa00841f3342c90794eeefa504a093c35e6af9
 
 build:
   number: 0
@@ -40,7 +40,7 @@ about:
   summary: Collection of Pandas stub files
   description: |
     Collection of Pandas stub files supported by the pandas team
-  doc_url: https://github.com/pandas-dev/pandas-stubs
+  doc_url: https://github.com/pandas-dev/pandas-stubs # Documentation is a work-in-progress.
   dev_url: https://github.com/pandas-dev/pandas-stubs
 
 extra:
