@@ -37,6 +37,7 @@ about:
   home: https://github.com/pandas-dev/pandas-stubs
   license: BSD-3-Clause
   license_file: LICENSE
+  license_family: BSD
   summary: Collection of Pandas stub files
   description: |
     Collection of Pandas stub files supported by the pandas team
