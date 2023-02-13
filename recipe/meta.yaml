@@ -14,7 +14,8 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps
-  skip: True  # [py<38]
+  # s390x is missing types-pytz>=2022.1.1
+  skip: True  # [py<38 or s390x]
 
 requirements:
   host:
