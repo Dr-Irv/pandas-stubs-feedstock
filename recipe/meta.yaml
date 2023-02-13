@@ -6,8 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7a4eedb210c77e0911fe32a4178673ba68ef569c034117ea19ada79451db4af9
+  # As of 2/13/2023 archive was unavailable on PyPi
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/pandas-dev/pandas-stubs/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 16dbefc3c2d8fb2eed4970bcb74a8746e7520e34477a7b9b69afef00ec80ae83
 
 build:
   number: 0
