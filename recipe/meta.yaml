@@ -1,18 +1,21 @@
 {% set name = "pandas-stubs" %}
-{% set version = "1.5.0.221003" %}
+{% set version = "1.5.3.230203" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 853ccd7c530db01eeee8293746fa00841f3342c90794eeefa504a093c35e6af9
+  # As of 2/13/2023 archive was unavailable on PyPi
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/pandas-dev/pandas-stubs/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 16dbefc3c2d8fb2eed4970bcb74a8746e7520e34477a7b9b69afef00ec80ae83
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
-  skip: True  # [py<38]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  # s390x is missing types-pytz>=2022.1.1
+  skip: True  # [py<38 or s390x]
 
 requirements:
   host:
