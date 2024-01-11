@@ -1,32 +1,30 @@
 {% set name = "pandas-stubs" %}
-{% set version = "1.5.3.230203" %}
+{% set version = "2.1.4.231227" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  # As of 2/13/2023 archive was unavailable on PyPi
-  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://github.com/pandas-dev/pandas-stubs/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 16dbefc3c2d8fb2eed4970bcb74a8746e7520e34477a7b9b69afef00ec80ae83
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pandas_stubs-{{ version }}.tar.gz
+  sha256: 3ea29ef001e9e44985f5ebde02d4413f94891ef6ec7e5056fb07d125be796c23
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
-  # s390x is missing types-pytz>=2022.1.1
-  skip: True  # [py<38 or s390x]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  # s390x is missing types-pytz
+  skip: True  # [py<39 or s390x]
 
 requirements:
   host:
     - python
     - pip
-    - poetry
-    - setuptools
+    - poetry-core
     - wheel
   run:
     - python
     - types-pytz >=2022.1.1
+    - numpy >=1.26  # [py<313]
 
 test:
   requires:
@@ -51,3 +49,5 @@ extra:
   recipe-maintainers:
     - twoertwein
     - Dr-Irv
+  skip-lints:
+    - missing_imports_or_run_test_py
