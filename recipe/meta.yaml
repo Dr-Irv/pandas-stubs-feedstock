@@ -50,3 +50,5 @@ extra:
   recipe-maintainers:
     - twoertwein
     - Dr-Irv
+  skip-lints:
+    - missing_imports_or_run_test_py
