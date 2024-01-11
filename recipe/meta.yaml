@@ -19,13 +19,12 @@ requirements:
   host:
     - python
     - pip
-    - poetry
-    - setuptools
+    - poetry-core
     - wheel
   run:
     - python
     - types-pytz >=2022.1.1
-    - {{ pin_compatible('numpy', lower_bound='1.26.0')}}
+    - numpy >=1.26  # [py<313]
 
 test:
   requires:
