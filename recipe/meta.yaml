@@ -10,7 +10,7 @@ source:
   sha256: 3ea29ef001e9e44985f5ebde02d4413f94891ef6ec7e5056fb07d125be796c23
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   # s390x is missing types-pytz
   skip: True  # [py<39 or s390x]
